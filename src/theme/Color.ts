@@ -1,10 +1,10 @@
+import { BotonOperacion } from "../components/BotonOperacion";
+
 export const Color = {
-
-    darkGray: '#2d2d2d' ,
-    lightGray: '#0b0b0b',
-    orange: '#ff9427',
-
-    textPrimary: 'white',
-    textSecondary: '#666666',
-    background: '#000'
+    fondo:'#A7D1D2',
+    botonNumeros:'#033540',
+    botonOperacion:'#015366',
+    botonEspecial:'#63898C',
+    texto:'#033540',
+    textoBoton:'#E0F4F5'
 }as const; //para que salga el color cuando te salen las opciones con el .
