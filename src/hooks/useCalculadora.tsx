@@ -13,8 +13,10 @@ export const useCalculadora = () =>{
     const [numero, setNumero] = useState('0');
     const [numeroAnterior, setNumeroAnterior] = useState('0');
 
+    //no es tipo use state porque no se va a escribir en ningu sitio de tipo enum operaciones
     const UltimaOperacion = useRef<Operadores>();
 
+    //un hook
     useEffect(() => {
         if (UltimaOperacion.current) {
             const primeraParteFormula = formula.split(' ').at(0);
