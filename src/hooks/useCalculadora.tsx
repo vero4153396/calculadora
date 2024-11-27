@@ -1,6 +1,7 @@
 import {useRef, useState, useEffect} from 'react';
+import { BotonOperacion } from '../components/BotonOperacion';
 
-enum Operadores {
+export enum Operadores {
     sumar = '+',
     restar = '-',
     multiplicar = '*',
@@ -73,25 +74,12 @@ export const useCalculadora = () =>{
         setNumero('0');
     }
 
-    const operacionDividir = () => {
-        establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.dividir;
-    }
 
-    const operacionMultiplicar = () => {
+    const operacion = (simbolo:Operadores) => {
         establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.multiplicar;
+        UltimaOperacion.current = simbolo;
     }
-
-    const operacionRestar = () => {
-        establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.restar;
-    }
-
-    const operacionSumar = () => {
-        establecerUltimoNumero();
-        UltimaOperacion.current = Operadores.sumar;
-    }
+    
 
     const calcularResultado = () => {
         const [primerValor, operacion, segundoValor] = formula.split(' ');
@@ -100,6 +88,8 @@ export const useCalculadora = () =>{
         const num2 = Number(segundoValor);
 
         if (isNaN(num2)) return num1;
+        if (num2===0 && operacion===Operadores.dividir) return "¡ERROR!";
+        
 
         switch(operacion) {
             case Operadores.sumar:
@@ -113,7 +103,7 @@ export const useCalculadora = () =>{
 
             case Operadores.dividir:
                 return num1 / num2;
-
+                
             default:
                 throw new Error(`La operación ( ${operacion} ) no está implementada `)
         }
@@ -160,10 +150,7 @@ export const useCalculadora = () =>{
         clean,
         cambiarSigno,
         borrarDigito,
-        operacionDividir,
-        operacionMultiplicar,
-        operacionRestar,
-        operacionSumar,
+        operacion,
         calcularResultado,
         resultado
     }
