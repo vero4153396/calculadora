@@ -41,14 +41,26 @@ export const GlobalStyles = StyleSheet.create({
         padding: 10,
         fontSize: 30,
         fontWeight: 300,
-        borderColor: 'black',
         borderRadius: 50,
-        backgroundColor: Color.botonNumeros,
         color:Color.textoBoton,
         borderWidth: 3,
     },
-    botonPulsado:{
-        opacity:0.6
+    botonNumero:{
+        backgroundColor: Color.botonNumeros,
+        borderColor: Color.botonNumeros,
     },
+    botonOperacion: {
+        borderColor: Color.botonOperacion,
+        backgroundColor: Color.botonOperacion,
+    },
+    botonEspecial: {
+        borderColor: Color.botonEspecial,
+        backgroundColor: Color.botonEspecial,
+    },
+    botonCero:{
+        backgroundColor: Color.botonNumeros,
+        borderColor: Color.botonNumeros,
+        width:160,
+    }
     
   });

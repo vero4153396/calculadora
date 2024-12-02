@@ -1,18 +1,32 @@
-import { Pressable, Text, StyleSheet } from "react-native";
+import { Pressable,ViewStyle, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../theme/GlobalStyles";
+import * as Haptics from 'expo-haptics';
 
 interface Props {
     label: string,
-    width: number,
-    onPress?: () => void;
+    tipo: "operaciones" |"numeros" |"otros"|"cero"
+    onPress: () => void;
 }
 
-export const BotonOperacion = ({label, width, onPress}:Props) => {
+export const BotonOperacion = ({label,tipo, onPress}:Props) => {
+    const buttonStyle:ViewStyle[] =[
+        GlobalStyles.boton,
+        tipo==="operaciones" ? GlobalStyles.botonOperacion: tipo==="numeros" ? GlobalStyles.botonNumero: tipo==="otros" ? GlobalStyles.botonEspecial:GlobalStyles.botonCero
+    ]
+
+    const vibrar = () => {
+        onPress()
+        Haptics.selectionAsync();
+        console.log("estoy vibrandoooo")
+    }
+
+
     return (
         <Pressable>
-            <Text 
-                style={GlobalStyles.boton}
-                onPress={onPress}>{label}</Text>
+            <Text
+                style={buttonStyle}
+                onPress={vibrar}>{label}</Text>
         </Pressable>
     )
+    
 };

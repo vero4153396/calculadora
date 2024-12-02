@@ -4,7 +4,7 @@ import { BotonOperacion } from '../components/BotonOperacion';
 export enum Operadores {
     sumar = '+',
     restar = '-',
-    multiplicar = '*',
+    multiplicar = '×',
     dividir = '/',
 }
 

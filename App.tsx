@@ -30,33 +30,33 @@ export default function App() {
       <StatusBar style="auto" />
 
     <View style={GlobalStyles.fila}>
-      <BotonOperacion label='C' width={80} onPress={clean}></BotonOperacion>
-      <BotonOperacion label='±' width={80} onPress={cambiarSigno}></BotonOperacion>
-      <BotonOperacion label='del' width={80} onPress={borrarDigito}></BotonOperacion>
-      <BotonOperacion label='÷' width={80} onPress={() =>operacion(Operadores.dividir)}></BotonOperacion>
+      <BotonOperacion label='C' tipo="otros"  onPress={clean}></BotonOperacion>
+      <BotonOperacion label='±' tipo="otros" onPress={cambiarSigno}></BotonOperacion>
+      <BotonOperacion label='del' tipo="otros" onPress={borrarDigito}></BotonOperacion>
+      <BotonOperacion label='÷'  tipo="operaciones" onPress={() =>operacion(Operadores.dividir)}></BotonOperacion>
     </View>
     <View style={GlobalStyles.fila}>
-      <BotonOperacion label='7' width={80} onPress={() =>construirNumero('7')}></BotonOperacion>
-      <BotonOperacion label='8' width={80} onPress={() =>construirNumero('8')}></BotonOperacion>
-      <BotonOperacion label='9' width={80} onPress={() =>construirNumero('9')}></BotonOperacion>
-      <BotonOperacion label='×' width={80} onPress={() =>operacion(Operadores.multiplicar)}></BotonOperacion>
+      <BotonOperacion label='7' tipo="numeros" onPress={() =>construirNumero('7')}></BotonOperacion>
+      <BotonOperacion label='8'  tipo="numeros" onPress={() =>construirNumero('8')}></BotonOperacion>
+      <BotonOperacion label='9' tipo="numeros" onPress={() =>construirNumero('9')}></BotonOperacion>
+      <BotonOperacion label='×' tipo="operaciones" onPress={() =>operacion(Operadores.multiplicar)}></BotonOperacion>
     </View>
     <View style={GlobalStyles.fila}>
-      <BotonOperacion label='4' width={80} onPress={() =>construirNumero('4')}></BotonOperacion>
-      <BotonOperacion label='5' width={80} onPress={() =>construirNumero('5')}></BotonOperacion>
-      <BotonOperacion label='6' width={80} onPress={() =>construirNumero('6')}></BotonOperacion>
-      <BotonOperacion label='-' width={80} onPress={() =>operacion(Operadores.restar)}></BotonOperacion>
+      <BotonOperacion label='4' tipo="numeros" onPress={() =>construirNumero('4')}></BotonOperacion>
+      <BotonOperacion label='5' tipo="numeros" onPress={() =>construirNumero('5')}></BotonOperacion>
+      <BotonOperacion label='6' tipo="numeros" onPress={() =>construirNumero('6')}></BotonOperacion>
+      <BotonOperacion label='-' tipo="operaciones" onPress={() =>operacion(Operadores.restar)}></BotonOperacion>
     </View>
     <View style={GlobalStyles.fila}>
-      <BotonOperacion label='1' width={80} onPress={() =>construirNumero('1')}></BotonOperacion>
-      <BotonOperacion label='2' width={80} onPress={() =>construirNumero('2')}></BotonOperacion>
-      <BotonOperacion label='3' width={80} onPress={() =>construirNumero('3')}></BotonOperacion>
-      <BotonOperacion label='+' width={80} onPress={() =>operacion(Operadores.sumar)}></BotonOperacion>
+      <BotonOperacion label='1' tipo="numeros" onPress={() =>construirNumero('1')}></BotonOperacion>
+      <BotonOperacion label='2' tipo="numeros" onPress={() =>construirNumero('2')}></BotonOperacion>
+      <BotonOperacion label='3' tipo="numeros" onPress={() =>construirNumero('3')}></BotonOperacion>
+      <BotonOperacion label='+' tipo="operaciones" onPress={() =>operacion(Operadores.sumar)}></BotonOperacion>
     </View>
     <View style={GlobalStyles.fila}>
-      <BotonOperacion label='0' width={180} onPress={() =>construirNumero('0')}></BotonOperacion>
-      <BotonOperacion label='.' width={80} onPress={() =>construirNumero('.')}></BotonOperacion>
-      <BotonOperacion label='=' width={80} onPress={resultado}></BotonOperacion>
+      <BotonOperacion label='0' tipo="cero" onPress={() =>construirNumero('0')}></BotonOperacion>
+      <BotonOperacion label='.' tipo="numeros" onPress={() =>construirNumero('.')}></BotonOperacion>
+      <BotonOperacion label='=' tipo="operaciones" onPress={resultado}></BotonOperacion>
     </View>
     </View>
 
