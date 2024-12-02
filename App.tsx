@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Pantalla } from './src/components/Pantalla';
-import { Pantalla2 } from './src/components/Pantalla2';
 import { BotonOperacion } from './src/components/BotonOperacion';
 import { useCalculadora } from './src/hooks/useCalculadora';
 import { GlobalStyles } from './src/theme/GlobalStyles';
@@ -19,12 +18,12 @@ export default function App() {
   return (
   
     <View style={GlobalStyles.container}>    
-      <Pantalla numberOfLines={1} adjustsFontSizeToFit>{formula}</Pantalla>
+      <Pantalla numberOfLines={1} tipo="principal" adjustsFontSizeToFit>{formula}</Pantalla>
 
       {formula === numeroAnterior ? (
-        <Pantalla2 numberOfLines={1} adjustsFontSizeToFit> </Pantalla2>
+        <Pantalla numberOfLines={1} tipo="secundaria" adjustsFontSizeToFit> </Pantalla>
       ) : (
-        <Pantalla2 numberOfLines={1} adjustsFontSizeToFit>{numeroAnterior}</Pantalla2>
+        <Pantalla numberOfLines={1} tipo="secundaria" adjustsFontSizeToFit>{numeroAnterior}</Pantalla>
       )}
       
       <StatusBar style="auto" />
